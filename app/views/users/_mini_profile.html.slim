@@ -1,0 +1,14 @@
+.mini_profile
+  .profile_pic
+    = render 'users/avatar', :user => user, :meta => {}
+
+  .profile_meta
+    h2
+      = link_to user.name, username_path(user.username)
+      = show_user_roles(user) if meta[:show_user_roles]
+    ul
+      li= user.location
+
+  .profile_details
+    = render 'shared/popularity_metrics', :resource => user
+  .clear

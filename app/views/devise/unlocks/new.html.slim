@@ -1,0 +1,8 @@
+h1= t('label.resend_unlock_instructions')
+
+= simple_form_for resource, :url => unlock_path(resource_name) do |f|
+  = f.error_notification
+  = f.input :email
+  = f.button :submit, t('label.resend_unlock_instructions')
+
+= render 'devise/shared/links'

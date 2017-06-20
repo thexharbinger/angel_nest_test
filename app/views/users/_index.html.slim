@@ -1,0 +1,29 @@
+ul.resource_list.user_list
+  - collection.each do |user|
+    li.mini_profile data-target_link="#{startup_profile_team_path(meta[:parent]) if meta[:parent]}" data-edit_target="#profile_team"
+      - unless meta[:role_identifier]
+        hr
+
+      .profile_pic
+        = render 'users/avatar', :user => user, :meta => {}
+
+      .profile_meta
+        h2= link_to user.name, username_path(user.username)
+        ul
+          - if meta[:role_identifier]
+            li= "#{meta[:parent].user_meta(user, meta[:role_identifier]).member_title}&nbsp;".html_safe
+          - else
+            li.introduction= user.introduction
+            li.location= user.location
+
+      - if meta[:role_identifier]
+        .inline_editable
+          - if meta[:editable] && meta[:parent].founder == current_user
+            = render 'shared/editable', :text => t('label.update'), :url => eval("update_user_in_#{meta[:parent].class.name.downcase}_path(parent, :role_identifier => :#{meta[:role_identifier]}, :uid => #{user.id})")
+          - if meta[:removable] && meta[:parent].founder == current_user
+            = render 'shared/editable', :text => t('label.remove'), :url => eval("detach_user_from_#{meta[:parent].class.name.downcase}_path(parent, :role_identifier => :#{meta[:role_identifier]}, :uid => #{user.id})")
+      - else
+        .profile_metrics
+          .follow_button= follow_button(user)
+
+= show_pagination collection

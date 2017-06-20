@@ -1,0 +1,8 @@
+= render 'users/mini_profile', :user => current_user, :meta => {}
+
+hr
+h3= t('label.private_messages')
+ul
+ li= link_to_current t('label.inbox_messages'), my_message_inbox_path(:inbox_messages)
+ li= link_to_current t('label.sent_messages') , my_message_inbox_path(:sent_messages)
+ li= link_to_current t('label.archived_messages') , my_message_inbox_path(:archived_messages)

@@ -1,0 +1,161 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  site:
+    name: AngelnVC
+    welcome: Welcome to AngelNest - the place for connecting entrepreneurs and investors!
+  system:
+    access_denied: Access denied!
+  simple_form:
+    labels:
+      login: Username or Email
+      name: Name
+      pitch: Pitch
+      funds_to_raise: Funds to raise
+      stage_identifier: Stage
+      market_identifier: Market
+      description: Description
+    hints:
+      pitch: A one sentence pitch to describe your startup.
+  helpers:
+    submit:
+      create: 'Add %{model}'
+      update: 'Edit %{model}'
+      destroy: 'Delete %{model}'
+      message:
+        create: Post
+  startup:
+    stages: Stages
+    markets: Markets
+    role_identifiers:
+      member: Member
+      advisor: Advisor
+      investor: Investor
+      incubator: Incubator
+    stage_identifiers:
+      concept: Concept
+      prototype_development: Prototype Development
+      market_pilot: Market Pilot
+      launched: Launched
+      has_revenue: Has Revenue
+      has_profit: Has Profit
+    market_identifiers:
+      mobile: Mobile
+      consumer_internet: Consumer Internet
+      enterprise_software: Enterprise Software
+      clean_technology: Clean Technology
+      life_science: Life Science
+      social_network: Social Network
+    proposal_stage_identifiers:
+      draft: Draft
+      submitted: Submitted
+  meta:
+    posted_by: Posted by
+    time_ago: '%{time} ago'
+    time_ago_by: '%{time} ago by'
+  label:
+    home: Home
+    loading: Loading
+    actions: Actions
+    create: Create
+    update: Update
+    add: Add
+    edit: Edit
+    update: Update
+    delete: Delete
+    remove: Remove
+    archive: Archive
+    cancel: Cancel
+    close: Close
+    confirm: Confirm
+    confirm_deletion: Confirm Deletion
+    next: Next
+    prev: Prev
+    name: Name
+    email: Email
+    welcome: Welcome
+    member: Member
+    sign_in: Sign in
+    sign_out: Sign out
+    sign_up: Sign up
+    new_password: New password
+    confirm_new_password: Confirm new password
+    change_my_password: Change my password
+    forgot_your_password: Forgot your password?
+    send_reset_password_instructions: Send me reset password instructions
+    resend_confirmation_instructions: Resend confirmation instructions
+    resend_unlock_instructions: Resend unlock instructions
+    edit_my_profile: Edit my profile
+    startup: Startup
+    submitted_by: Submitted by
+    submitted_to: Submitted to
+    startups: Startups
+    investor: Investor
+    investors: Investors
+    entrepreneur: Entrepreneur
+    entrepreneurs: Entrepreneurs
+    founder: Founder
+    invested_in: Invested In
+    team: Team
+    title: Title
+    members: Team Members
+    investors: Investors
+    advisors: Advisors
+    incubators: Incubators
+    create_new: Create new
+    create_one_now: create one now!
+    save_draft: Save draft
+    submit_proposal: Submit proposal
+    apply_now: apply now!
+    following: Following
+    followers: Followers
+    follow: Follow
+    unfollow: Unfollow
+    followed: Followed
+    comments: Comments
+    micro_posts: Posts
+    add_micro_post: Post
+    whats_on_your_mind: What's on your mind?
+    startup_profile: Startup profile
+    business_proposal: Business Proposal
+    business_proposals: Business Proposals
+    product: Product
+    market: Market
+    competition: Competition
+    investment: Investment
+    one_year_market: Market in One Year
+    five_year_market: Market in Five Years
+    messages: Messages
+    new_message: New message
+    new_proposal: New Proposal
+    private_messages: Private messages
+    inbox: Inbox
+    inbox_messages: Inbox messages
+    sent_messages: Sent messages
+    startup_proposals: Startup proposals
+    inbox_proposals: Inbox proposals
+    sent_proposals: Sent proposals
+    archived_proposals: Archived proposals
+    recipients: Recipients
+    messages_inbox: Messages inbox
+    proposals_inbox: Proposals inbox
+    delete_the_image_below: Delete the image below
+    contact_founder: Contact founder
+    details: Details
+    not_interested: Not interested
+    from: From
+    raise: Raise
+    stage: Stage
+  message:
+    proposal_saved: The proposal has been saved!
+    proposal_submitted: The proposal has been submitted to the investors!
+  text:
+    have_no_startups: You have no startups,
+    not_an_investor: You are not an investor,
+    no_invested_startups_found: No invested startups found.
+    default_text_for_proposal_review: Please review this proposal.
+    enter_recipient_names: Recipient name ...
+    enter_investor_names: Investor names ...
+    no_more_selections_allowed: No more selections are allowed.
+    message_is_archived: The message is archived.

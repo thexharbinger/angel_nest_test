@@ -1,0 +1,61 @@
+doctype 5
+| <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+| <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+| <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+| <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+| <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+head
+  meta charset="UTF-8"
+  meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+
+  title= t('site.name')
+
+  link rel="author" href="#{root_url.html_safe}humans.txt"
+  meta name="author" content="Fred Wu"
+  meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+  = stylesheet_link_tag :application
+  = javascript_include_tag :application
+  = csrf_meta_tags
+
+body
+  header.container_12
+    #header-container
+      h1= link_to t('site.name'), root_path
+      nav
+        ul
+          li= link_to_current t('label.home'), root_path
+          li= link_to_current t('label.startups'), startups_path
+          li= link_to_current t('label.entrepreneurs'), entrepreneurs_path
+          li= link_to_current t('label.investors'), investors_path
+      - if current_user
+        #userbar= render 'layouts/userbars/topnav'
+      .clear
+      hr
+
+  #main.container_12
+    - unless @hide_sidebar
+      aside.grid_3.sidebar
+        - if current_user
+          #private_sidebar= render 'layouts/sidebars/user', :user => current_user
+        - else
+          #public_sidebar= render 'layouts/sidebars/public'
+    article class=(@hide_sidebar ? "grid_12" : "grid_9" unless @custom_grids)
+      - flash.each do |type, message|
+        .message class=type
+          p.info= message
+      = yield
+    .clear
+
+  footer.container_12
+    #footer-container
+      p
+        ' Copyright &copy;
+        = t('site.name')
+
+  /[if lt IE 7 ]
+    = javascript_include_tag '/javascripts/dd_belatedpng.js'
+    = javascript_tag 'DD_belatedPNG.fix("img, .png_bg");'
+
+| </html>
